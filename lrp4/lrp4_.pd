@@ -1,0 +1,4 @@
+#N canvas 317 209 666 331 10;
+#X declare -lib flatgui;
+#X obj -50 5 lrp4;
+#X text 215 313 2014 Shingo Sasahara;
