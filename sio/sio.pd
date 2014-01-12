@@ -1,0 +1,36 @@
+#N canvas 314 22 578 479 10;
+#X declare -lib mrpeach;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#N canvas 670 175 382 467 preset 0;
+#X text 5 67 reset;
+#X obj 6 18 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 6 43 route 0 1 2 3 4 5 6 7;
+#X msg 6 87 \; EG_v 0 1000 \; EG_a 0 1000 \; EG_a 0 1000 \; EG_de 0
+1000 \; EG_s 0 1000 \; EG_r 0 1000 \; EG_du 0 \; FC_s 0 1000 \; FC_e
+0 1000 \; FC_d 0 1000 \; FC_q 0 1000 \;;
+#X msg 123 83 \; mixerA 30 1000 \; EG_v 127 1000 \; EG_a 70 1000 \;
+EG_de 20 1000 \; EG_s 65 1000 \; EG_r 30 1000 \; EG_du 100 \; FC_s
+100 1000 \; FC_e 20 1000 \; FC_d 100 1000 \; FC_q 100 1000 \; FC_vib
+10 1000 \; FC_dep 30 1000 \; tl1 70 1000 \; tl2 100 1000 \; tl3 40
+1000 \; oc1 100 1000 \; oc2 70 1000 \; oc3 30 1000 \;;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X coords 0 -1 1 1 150 40 1 0 0;
+#X restore 401 157 pd preset;
+#X obj 5 -54 touchOSC;
+#X text 67 -57 get paramater from touchOSC;
+#X obj 5 -25 pack 0 0;
+#X obj 88 222 master;
+#X obj 5 223 track 1;
+#X obj 5 15 synth;
+#X connect 1 0 3 0;
+#X connect 1 1 3 1;
+#X connect 3 0 6 0;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;
+#X connect 6 0 5 0;
+#X connect 6 0 5 1;
+#X coords 0 -1 1 1 570 375 1 0 0;
