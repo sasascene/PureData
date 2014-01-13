@@ -1,0 +1,5 @@
+#N canvas 333 91 642 402 10;
+#X declare -lib flatgui;
+#X declare -lib mrpeach;
+#X text 247 383 2014 Shingo Sasahara;
+#X obj 3 3 mbb4;
