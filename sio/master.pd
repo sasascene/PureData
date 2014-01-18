@@ -3,9 +3,8 @@
 #X obj 104 71 inlet~;
 #X obj 152 71 inlet~;
 #X obj 307 69 import flatgui;
-#N canvas 503 267 490 376 filter 0;
+#N canvas 503 267 490 376 filter 1;
 #X obj 116 184 / 127;
-#X obj 116 207 * 1000;
 #X floatatom 116 230 5 0 0 0 - - -;
 #X obj 46 258 inlet~;
 #X obj 100 334 outlet~;
@@ -23,32 +22,33 @@
 #X obj 42 307 lores~;
 #X obj 94 14 r flpr\$1;
 #X obj 107 138 knob 20 20 0 127 0 0 empty empty CUTOFF 0 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 200 1;
 #X obj 146 138 knob 20 20 0 127 0 0 empty empty RESONANCE 0 -8 0 10
 -262144 -1 -1 0 1;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
+#X obj 116 207 * 7000;
+#X connect 0 0 19 0;
+#X connect 1 0 4 0;
 #X connect 2 0 5 0;
-#X connect 3 0 6 0;
-#X connect 5 0 6 1;
-#X connect 5 0 16 1;
-#X connect 6 0 4 0;
-#X connect 7 0 8 0;
-#X connect 8 0 6 2;
-#X connect 8 0 16 2;
+#X connect 4 0 5 1;
+#X connect 4 0 15 1;
+#X connect 5 0 3 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 2;
+#X connect 7 0 15 2;
+#X connect 8 0 17 0;
 #X connect 9 0 18 0;
-#X connect 10 0 19 0;
+#X connect 10 0 8 0;
 #X connect 11 0 9 0;
 #X connect 12 0 10 0;
-#X connect 13 0 11 0;
-#X connect 13 1 12 0;
-#X connect 13 2 11 1;
-#X connect 13 2 12 1;
-#X connect 14 0 16 0;
-#X connect 16 0 15 0;
-#X connect 17 0 13 0;
-#X connect 18 0 0 0;
-#X connect 19 0 7 0;
+#X connect 12 1 11 0;
+#X connect 12 2 10 1;
+#X connect 12 2 11 1;
+#X connect 13 0 15 0;
+#X connect 15 0 14 0;
+#X connect 16 0 12 0;
+#X connect 17 0 0 0;
+#X connect 18 0 6 0;
+#X connect 19 0 1 0;
 #X coords 0 -1 1 1 110 65 1 100 100;
 #X restore 104 115 pd filter;
 #N canvas 410 107 787 566 delay 0;
@@ -66,7 +66,7 @@
 #X obj 110 194 * 3000;
 #X obj 110 284 line;
 #X obj 110 217 t b a;
-#X msg 110 262 1578.95 50;
+#X msg 110 262 315.789 50;
 #X msg 137 239 set \$1 50;
 #X obj 12 479 *~ 0.5;
 #X obj 12 455 +~;
@@ -91,9 +91,9 @@
 #X obj -130 374 delread~ \$0_delayL 3000;
 #X obj 37 374 delread~ \$0_delayR 3000;
 #X obj 106 138 knob 20 20 0 127 0 0 empty empty TIME 0 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 200 1;
 #X obj 143 138 knob 20 20 0 127 0 0 empty empty FEED 0 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 700 1;
 #X obj 182 138 knob 20 20 0 127 0 0 empty empty MIX 0 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 77 -5 r delay\$1;
@@ -624,11 +624,11 @@ to its right inlet.;
 #X obj 646 187 t b b;
 #X obj 675 212 s \$0-loadbang;
 #X obj 126 127 hsl 60 8 0 1 0 0 \$0-a \$0-ra brightness -2 -7 0 10
--196091 -262144 -355 3304 1;
+-196091 -262144 -355 0 1;
 #X obj 126 149 hsl 60 8 0 1 0 0 \$0-c \$0-rc dry -2 -7 0 10 -196091
 -262144 -355 5900 1;
 #X obj 213 127 hsl 60 8 0 1 0 0 \$0-b \$0-rb roomsize -2 -7 0 10 -196091
--262144 -355 3540 1;
+-262144 -355 0 1;
 #X obj 106 123 cnv 12 15 13 empty empty 0 1 6 0 12 -33289 -262144 0
 ;
 #X obj 106 145 cnv 12 15 13 empty empty 2 1 6 0 12 -33289 -262144 0
@@ -636,7 +636,7 @@ to its right inlet.;
 #X obj 193 123 cnv 12 15 13 empty empty 1 1 6 0 12 -33289 -262144 0
 ;
 #X obj 213 149 hsl 60 8 0 1 0 0 \$0-d \$0-rd wet -2 -7 0 10 -196091
--262144 -355 3540 1;
+-262144 -355 0 1;
 #X obj 193 145 cnv 12 15 13 empty empty 3 1 6 0 12 -33289 -262144 0
 ;
 #X obj 417 137 s \$0-dampen;
@@ -1537,7 +1537,7 @@ to its right inlet.;
 #X connect 38 0 37 0;
 #X coords 0 -1 1 1 180 85 1 100 100;
 #X restore 217 115 pd reverb;
-#N canvas 498 117 937 522 out 0;
+#N canvas 243 118 542 510 out 0;
 #N canvas 284 22 731 631 limiter 0;
 #X obj 165 212 average~ 44100;
 #X obj 337 211 average~ 44100;
@@ -1659,7 +1659,7 @@ to its right inlet.;
 #X connect 52 0 42 0;
 #X restore 192 390 pd limiter;
 #X obj 86 188 tgl 18 0 THIS_IS_HERE_TO_GET_RID_OF_THE_OUTLET \$0-dsp-toggle
-dsp 2 9 1 9 -262144 -195568 -33289 0 1;
+dsp 2 9 1 9 -225271 -195568 -33289 1 1;
 #N canvas 328 225 482 356 dsp 0;
 #X obj 11 7 inlet;
 #X obj 92 226 select 0 1;
@@ -1708,15 +1708,15 @@ dsp 2 9 1 9 -262144 -195568 -33289 0 1;
 #X text 298 340 filter out DC;
 #X obj 192 312 inlet~;
 #X obj 254 312 inlet~;
-#X obj 201 119 knob 18 18 0 127 0 0 empty empty LIMIT 0 -8 0 10 -262144
--1 -1 0 1;
-#X obj 238 119 knob 18 18 0 127 0 0 empty empty MASTER 0 -8 0 10 -262144
--1 -1 0 1;
+#X obj 144 121 knob 18 18 0 127 0 0 empty empty LIMIT 0 -8 0 10 -262144
+-1 -1 400 1;
+#X obj 183 121 knob 18 18 0 127 0 0 empty empty MASTER 0 -8 0 10 -262144
+-1 -1 200 1;
 #X obj 51 165 / 127;
 #X msg 433 439 start;
 #X msg 477 438 stop;
 #X obj 403 470 writesf~ 2;
-#X obj 167 117 tgl 20 0 empty empty REC 2 11 1 8 -258113 -262144 -262144
+#X obj 109 119 tgl 20 0 empty empty REC 2 11 1 8 -258113 -262144 -262144
 0 1;
 #X obj 404 340 sel 1;
 #X obj 404 364 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
