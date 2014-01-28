@@ -1,0 +1,765 @@
+#N canvas 455 82 625 455 10;
+#X declare -lib mrpeach;
+#X obj 156 102 unpackOSC;
+#X obj 156 409 udpsend;
+#X obj 156 301 packOSC;
+#X obj 156 275 prepend send /pd_mlr/led;
+#X msg 85 327 connect 127.0.0.1 8080;
+#X msg 85 350 disconnect;
+#X text -62 25 prefix : /pd_mlr;
+#X obj -54 62 import mrpeach;
+#X obj 254 229 outlet;
+#X text -62 3 monome connection;
+#N canvas 548 149 652 512 mode 0;
+#X obj 106 406 spigot;
+#X obj 29 74 inlet;
+#X obj 29 465 outlet;
+#X obj 103 120 hradio 10 1 0 5 empty empty mode 0 -8 0 10 -262144 -1
+-1 0;
+#X floatatom 103 142 5 0 0 0 - - -;
+#X obj 103 164 change;
+#X obj 47 265 loadbang;
+#X obj 29 406 spigot;
+#X obj 103 295 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 130 295 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 148 295 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 103 215 t b 0;
+#X obj 121 238 t b 0;
+#X obj 140 266 t b 0;
+#X obj 159 214 t b 0;
+#X obj 168 295 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#N canvas 842 217 326 249 togglemode 0;
+#X obj 14 163 pack f f f;
+#X obj 14 52 inlet;
+#X obj 14 191 outlet;
+#X obj 14 91 unpack f f;
+#N canvas 0 383 353 197 GetToggleValue 0;
+#N canvas 428 283 437 223 tgl1 0;
+#X obj 16 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 16 102 sel 1;
+#X obj 16 65 route 0 1 2 3 4 5 6 7;
+#X obj 55 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 55 102 sel 1;
+#X obj 94 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 94 102 sel 1;
+#X obj 132 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 132 102 sel 1;
+#X obj 171 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 171 101 sel 1;
+#X obj 210 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 101 sel 1;
+#X obj 249 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 249 101 sel 1;
+#X obj 287 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 287 101 sel 1;
+#X obj 16 12 inlet;
+#X obj 16 171 outlet;
+#X obj 16 37 route 0 1 2 3 4 5 6 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 6 0;
+#X connect 2 3 8 0;
+#X connect 2 4 10 0;
+#X connect 2 5 12 0;
+#X connect 2 6 14 0;
+#X connect 2 7 16 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 0 2 0;
+#X restore 9 77 pd tgl1;
+#N canvas 428 283 437 223 tgl2 0;
+#X obj 31 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 31 103 sel 1;
+#X obj 31 66 route 0 1 2 3 4 5 6 7;
+#X obj 70 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 70 103 sel 1;
+#X obj 109 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 109 103 sel 1;
+#X obj 147 124 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 147 103 sel 1;
+#X obj 186 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 186 102 sel 1;
+#X obj 225 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 225 102 sel 1;
+#X obj 264 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 264 102 sel 1;
+#X obj 302 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 302 102 sel 1;
+#X obj 16 12 inlet;
+#X obj 31 172 outlet;
+#X obj 16 37 route 0 1 2 3 4 5 6 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 6 0;
+#X connect 2 3 8 0;
+#X connect 2 4 10 0;
+#X connect 2 5 12 0;
+#X connect 2 6 14 0;
+#X connect 2 7 16 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 1 2 0;
+#X restore 60 77 pd tgl2;
+#N canvas 428 283 437 223 tgl3 0;
+#X obj 46 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 46 101 sel 1;
+#X obj 46 64 route 0 1 2 3 4 5 6 7;
+#X obj 85 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 85 101 sel 1;
+#X obj 124 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 124 101 sel 1;
+#X obj 162 122 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 162 101 sel 1;
+#X obj 201 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 201 100 sel 1;
+#X obj 240 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 240 100 sel 1;
+#X obj 279 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 279 100 sel 1;
+#X obj 317 121 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 317 100 sel 1;
+#X obj 16 12 inlet;
+#X obj 46 170 outlet;
+#X obj 16 37 route 0 1 2 3 4 5 6 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 6 0;
+#X connect 2 3 8 0;
+#X connect 2 4 10 0;
+#X connect 2 5 12 0;
+#X connect 2 6 14 0;
+#X connect 2 7 16 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 2 2 0;
+#X restore 111 77 pd tgl3;
+#N canvas 428 283 437 223 tgl4 0;
+#X obj 62 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 62 102 sel 1;
+#X obj 62 65 route 0 1 2 3 4 5 6 7;
+#X obj 101 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 101 102 sel 1;
+#X obj 140 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 140 102 sel 1;
+#X obj 178 131 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 178 102 sel 1;
+#X obj 217 130 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 217 101 sel 1;
+#X obj 256 130 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 256 101 sel 1;
+#X obj 295 130 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 295 101 sel 1;
+#X obj 333 130 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 333 101 sel 1;
+#X obj 16 12 inlet;
+#X obj 62 171 outlet;
+#X obj 16 37 route 0 1 2 3 4 5 6 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 6 0;
+#X connect 2 3 8 0;
+#X connect 2 4 10 0;
+#X connect 2 5 12 0;
+#X connect 2 6 14 0;
+#X connect 2 7 16 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 3 2 0;
+#X restore 164 77 pd tgl4;
+#N canvas 428 283 437 223 tgl5 0;
+#X obj 16 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 16 105 sel 1;
+#X obj 16 68 route 0 1 2 3 4 5 6 7;
+#X obj 55 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 55 105 sel 1;
+#X obj 94 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 94 105 sel 1;
+#X obj 132 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 132 105 sel 1;
+#X obj 171 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 171 104 sel 1;
+#X obj 210 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 104 sel 1;
+#X obj 249 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 249 104 sel 1;
+#X obj 287 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 287 104 sel 1;
+#X obj 16 12 inlet;
+#X obj 16 174 outlet;
+#X obj 16 37 route 0 1 2 3 4 5 6 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 6 0;
+#X connect 2 3 8 0;
+#X connect 2 4 10 0;
+#X connect 2 5 12 0;
+#X connect 2 6 14 0;
+#X connect 2 7 16 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 4 2 0;
+#X restore 89 107 pd tgl5;
+#N canvas 428 283 437 223 tgl6 0;
+#X obj 16 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 16 105 sel 1;
+#X obj 16 68 route 0 1 2 3 4 5 6 7;
+#X obj 55 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 55 105 sel 1;
+#X obj 94 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 94 105 sel 1;
+#X obj 132 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 132 105 sel 1;
+#X obj 171 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 171 104 sel 1;
+#X obj 210 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 104 sel 1;
+#X obj 249 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 249 104 sel 1;
+#X obj 287 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 287 104 sel 1;
+#X obj 16 12 inlet;
+#X obj 16 174 outlet;
+#X obj 16 37 route 0 1 2 3 4 5 6 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 6 0;
+#X connect 2 3 8 0;
+#X connect 2 4 10 0;
+#X connect 2 5 12 0;
+#X connect 2 6 14 0;
+#X connect 2 7 16 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 5 2 0;
+#X restore 144 108 pd tgl6;
+#N canvas 428 283 437 223 tgl7 0;
+#X obj 16 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 16 105 sel 1;
+#X obj 16 68 route 0 1 2 3 4 5 6 7;
+#X obj 55 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 55 105 sel 1;
+#X obj 94 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 94 105 sel 1;
+#X obj 132 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 132 105 sel 1;
+#X obj 171 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 171 104 sel 1;
+#X obj 210 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 104 sel 1;
+#X obj 249 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 249 104 sel 1;
+#X obj 287 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 287 104 sel 1;
+#X obj 16 12 inlet;
+#X obj 16 174 outlet;
+#X obj 16 37 route 0 1 2 3 4 5 6 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 6 0;
+#X connect 2 3 8 0;
+#X connect 2 4 10 0;
+#X connect 2 5 12 0;
+#X connect 2 6 14 0;
+#X connect 2 7 16 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 6 2 0;
+#X restore 197 108 pd tgl7;
+#N canvas 487 316 437 223 tgl8 0;
+#X obj 16 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 16 105 sel 1;
+#X obj 16 68 route 0 1 2 3 4 5 6 7;
+#X obj 55 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 55 105 sel 1;
+#X obj 94 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 94 105 sel 1;
+#X obj 132 126 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 132 105 sel 1;
+#X obj 171 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 171 104 sel 1;
+#X obj 210 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 210 104 sel 1;
+#X obj 249 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 249 104 sel 1;
+#X obj 287 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 287 104 sel 1;
+#X obj 16 12 inlet;
+#X obj 16 174 outlet;
+#X obj 16 37 route 0 1 2 3 4 5 6 7;
+#X connect 0 0 18 0;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 2 2 6 0;
+#X connect 2 3 8 0;
+#X connect 2 4 10 0;
+#X connect 2 5 12 0;
+#X connect 2 6 14 0;
+#X connect 2 7 16 0;
+#X connect 3 0 18 0;
+#X connect 4 0 3 0;
+#X connect 5 0 18 0;
+#X connect 6 0 5 0;
+#X connect 7 0 18 0;
+#X connect 8 0 7 0;
+#X connect 9 0 18 0;
+#X connect 10 0 9 0;
+#X connect 11 0 18 0;
+#X connect 12 0 11 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 0;
+#X connect 15 0 18 0;
+#X connect 16 0 15 0;
+#X connect 17 0 19 0;
+#X connect 19 7 2 0;
+#X restore 249 107 pd tgl8;
+#X obj 9 29 inlet;
+#X obj 9 168 outlet;
+#X text 8 6 Get Toggle Value from grid;
+#X connect 0 0 9 0;
+#X connect 1 0 9 0;
+#X connect 2 0 9 0;
+#X connect 3 0 9 0;
+#X connect 4 0 9 0;
+#X connect 5 0 9 0;
+#X connect 6 0 9 0;
+#X connect 7 0 9 0;
+#X connect 8 0 0 0;
+#X connect 8 0 1 0;
+#X connect 8 0 2 0;
+#X connect 8 0 3 0;
+#X connect 8 0 4 0;
+#X connect 8 0 5 0;
+#X connect 8 0 6 0;
+#X connect 8 0 7 0;
+#X restore 131 93 pd GetToggleValue;
+#X obj 131 117 t b f;
+#X text 127 73 指定したボタンのステータスを取得;
+#X text 11 74 座標値はそのまま出力;
+#X text 13 21 toggle モード;
+#X text 54 51 0 0 0;
+#X text 60 189 0 0 0;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 1 0 4 0;
+#X connect 3 0 0 0;
+#X connect 3 1 0 1;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;
+#X connect 5 1 0 2;
+#X restore 106 430 pd togglemode;
+#N canvas 659 276 432 461 fadermode 0;
+#X floatatom 156 248 5 0 0 0 - - -;
+#X obj 156 199 until;
+#X obj 156 224 counter 0 7;
+#X msg 194 176 clear;
+#X msg 156 176 8;
+#X obj 175 149 t b b f;
+#X obj 23 406 pack 0 0 0;
+#X obj 23 342 f;
+#X text 91 247 0~7でループ;
+#X obj 156 279 t b f f;
+#X obj 68 82 t l l;
+#X obj 38 121 unpack 0;
+#X text 36 102 row;
+#X obj 118 121 unpack 0 0;
+#X text 116 102 col;
+#X text 21 323 row;
+#X obj 68 52 inlet;
+#X obj 23 433 outlet;
+#X text 110 52 0 0 0;
+#X text 71 432 0 0 0;
+#X text 20 27 fader モード;
+#X obj 247 176 expr ($f1/7)*127;
+#X obj 250 202 hsl 128 8 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 199 311 >=;
+#X text 198 336 押下した座標はon それ以下の座標はoff
+;
+#X connect 0 0 9 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 4 0;
+#X connect 5 1 3 0;
+#X connect 5 2 21 0;
+#X connect 5 2 23 1;
+#X connect 6 0 17 0;
+#X connect 7 0 6 0;
+#X connect 9 0 7 0;
+#X connect 9 1 6 1;
+#X connect 9 2 23 0;
+#X connect 10 0 13 0;
+#X connect 10 1 11 0;
+#X connect 11 0 7 1;
+#X connect 13 1 5 0;
+#X connect 16 0 10 0;
+#X connect 21 0 22 0;
+#X connect 23 0 6 2;
+#X restore 201 430 pd fadermode;
+#X text 103 446 トグル;
+#X obj 201 406 spigot;
+#X obj 289 406 spigot;
+#X obj 201 464 outlet;
+#N canvas 119 180 432 461 radiobuttonmode_v 0;
+#X floatatom 156 248 5 0 0 0 - - -;
+#X obj 243 176 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 156 199 until;
+#X obj 156 224 counter 0 7;
+#X msg 194 176 clear;
+#X msg 156 176 8;
+#X obj 175 149 t b b f;
+#X text 184 359 押下したボタンはon それ以外はoff;
+#X obj 23 342 f;
+#X text 91 247 0~7でループ;
+#X obj 156 279 t b f f;
+#X obj 68 82 t l l;
+#X text 36 102 row;
+#X text 116 102 col;
+#X text 21 323 row;
+#X obj 68 52 inlet;
+#X obj 23 433 outlet;
+#X text 20 27 radio button モード;
+#X text 110 52 0 0 0;
+#X text 71 432 0 0 0;
+#X obj 199 311 ==;
+#X obj 38 121 unpack f;
+#X obj 118 121 unpack f f;
+#X obj 23 406 pack f f f;
+#X connect 0 0 10 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;
+#X connect 6 1 4 0;
+#X connect 6 2 1 0;
+#X connect 6 2 20 1;
+#X connect 8 0 23 0;
+#X connect 10 0 8 0;
+#X connect 10 1 23 1;
+#X connect 10 2 20 0;
+#X connect 11 0 22 0;
+#X connect 11 1 21 0;
+#X connect 15 0 11 0;
+#X connect 20 0 23 2;
+#X connect 21 0 8 1;
+#X connect 22 1 6 0;
+#X connect 23 0 16 0;
+#X restore 289 430 pd radiobuttonmode_v;
+#N canvas 577 184 432 461 radiobuttonmode_h 0;
+#X floatatom 49 251 5 0 0 0 - - -;
+#X obj 136 179 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 49 202 until;
+#X obj 49 227 counter 0 7;
+#X msg 87 179 clear;
+#X msg 49 179 8;
+#X obj 68 152 t b b f;
+#X text 134 360 押下したボタンはon それ以外はoff;
+#X text -16 250 0~7でループ;
+#X obj 68 52 inlet;
+#X obj 23 433 outlet;
+#X text 20 27 radio button モード;
+#X text 110 52 0 0 0;
+#X text 71 432 0 0 0;
+#X obj 92 314 ==;
+#X text 66 103 row;
+#X obj 23 406 pack f f f;
+#X obj 68 122 unpack f f;
+#X obj 49 274 t f f;
+#X connect 0 0 18 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 0;
+#X connect 6 1 4 0;
+#X connect 6 2 1 0;
+#X connect 6 2 14 1;
+#X connect 9 0 17 0;
+#X connect 14 0 16 2;
+#X connect 16 0 10 0;
+#X connect 17 0 6 0;
+#X connect 17 1 16 1;
+#X connect 18 0 16 0;
+#X connect 18 1 14 0;
+#X restore 418 430 pd radiobuttonmode_h;
+#X obj 103 189 route 0 1 2 3 4;
+#X obj 174 237 t b 0;
+#X obj 198 295 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 418 406 spigot;
+#X text 198 445 フェーダー;
+#X text 289 447 ラジオボタン（縦）;
+#X text 417 448 ラジオボタン（横）;
+#X connect 0 0 16 0;
+#X connect 1 0 0 0;
+#X connect 1 0 7 0;
+#X connect 1 0 19 0;
+#X connect 1 0 20 0;
+#X connect 1 0 27 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 5 0 24 0;
+#X connect 6 0 8 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 1;
+#X connect 9 0 0 1;
+#X connect 10 0 19 1;
+#X connect 10 0 7 1;
+#X connect 11 0 8 0;
+#X connect 11 1 9 0;
+#X connect 11 1 10 0;
+#X connect 11 1 15 0;
+#X connect 12 0 9 0;
+#X connect 12 1 8 0;
+#X connect 12 1 10 0;
+#X connect 12 1 15 0;
+#X connect 13 0 10 0;
+#X connect 13 1 9 0;
+#X connect 13 1 8 0;
+#X connect 13 1 15 0;
+#X connect 14 0 15 0;
+#X connect 14 1 10 0;
+#X connect 14 1 9 0;
+#X connect 14 1 8 0;
+#X connect 15 0 20 1;
+#X connect 15 0 7 1;
+#X connect 16 0 2 0;
+#X connect 17 0 21 0;
+#X connect 19 0 17 0;
+#X connect 20 0 22 0;
+#X connect 22 0 21 0;
+#X connect 23 0 21 0;
+#X connect 24 0 11 0;
+#X connect 24 1 12 0;
+#X connect 24 2 13 0;
+#X connect 24 3 14 0;
+#X connect 24 4 25 0;
+#X connect 25 0 26 0;
+#X connect 25 1 15 0;
+#X connect 25 1 10 0;
+#X connect 25 1 9 0;
+#X connect 25 1 8 0;
+#X connect 26 0 27 1;
+#X connect 26 0 7 1;
+#X connect 27 0 23 0;
+#X coords 0 -1 1 1 65 40 2 100 100;
+#X restore 156 172 pd mode;
+#X obj 156 126 routeOSC /pd_mlr/press;
+#X obj 113 167 tgl 16 0 empty empty empty 0 -8 0 10 -262144 -1 -1 1
+1;
+#X obj 85 304 sel 1;
+#X text 11 231 パラメータの表示;
+#X text 16 166 monomeとの接続;
+#X obj 116 253 inlet;
+#X text 311 275 led 光らせたいボタンへ信号を送信;
+#X text 153 431 指定したIP ポートへ信号を送信;
+#X text 153 52 指定したポートから信号を受信;
+#X obj 156 74 udpreceive 8000;
+#X obj 200 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 156 254 spigot;
+#X obj 85 277 r toMonome;
+#X obj 302 229 s fromMonome;
+#X obj 156 385 spigot;
+#X obj 113 195 t f f;
+#X connect 0 0 11 0;
+#X connect 2 0 25 0;
+#X connect 3 0 2 0;
+#X connect 4 0 25 0;
+#X connect 5 0 4 0;
+#X connect 5 0 25 0;
+#X connect 10 0 8 0;
+#X connect 10 0 22 0;
+#X connect 10 0 24 0;
+#X connect 10 1 22 0;
+#X connect 11 0 10 0;
+#X connect 12 0 26 0;
+#X connect 13 0 4 0;
+#X connect 13 1 5 0;
+#X connect 16 0 3 0;
+#X connect 20 0 0 0;
+#X connect 21 0 22 1;
+#X connect 22 0 3 0;
+#X connect 23 0 3 0;
+#X connect 25 0 1 0;
+#X connect 26 0 13 0;
+#X connect 26 1 25 1;
+#X coords 0 -1 1 1 40 40 1 110 150;
