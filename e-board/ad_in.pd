@@ -1,0 +1,19 @@
+#N canvas 323 178 404 219 10;
+#X declare -lib flatgui;
+#X obj 200 55 adc~;
+#X obj 200 84 *~ 1;
+#X obj 250 84 *~ 1;
+#X obj 200 113 outlet~;
+#X obj 250 113 outlet~;
+#X obj 201 143 import flatgui;
+#X obj 109 132 knob 20 20 0 127 0 0 empty empty LEVEL 0 -8 0 8 -262144
+-1 -1 0 1;
+#X obj 109 167 / 127;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 2 1;
+#X connect 7 0 1 1;
+#X coords 0 -1 1 1 40 60 1 100 100;
