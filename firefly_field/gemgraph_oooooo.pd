@@ -1,4 +1,4 @@
-#N canvas 356 22 584 377 10;
+#N canvas 621 221 584 377 10;
 #X msg 27 37 create;
 #X msg 42 56 destroy;
 #X obj -12 114 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -18,7 +18,7 @@
 #X obj 215 131 s y;
 #X obj 254 131 s z;
 #X obj 175 33 hsl 64 8 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 600 1;
+-1 -1 0 1;
 #X obj 215 66 / 127;
 #X obj 215 89 * 360;
 #X floatatom 215 110 5 0 0 0 - - -;
