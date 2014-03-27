@@ -10,7 +10,7 @@
 #X obj -54 62 import mrpeach;
 #X obj 254 229 outlet;
 #X text -62 3 monome connection;
-#N canvas 548 149 652 512 mode 0;
+#N canvas 548 149 652 512 mode 1;
 #X obj 106 406 spigot;
 #X obj 29 74 inlet;
 #X obj 29 465 outlet;
@@ -552,10 +552,10 @@
 #X connect 0 0 9 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X connect 3 0 2 0;
 #X connect 4 0 1 0;
 #X connect 5 0 4 0;
 #X connect 5 1 3 0;
+#X connect 5 1 2 2;
 #X connect 5 2 21 0;
 #X connect 5 2 23 1;
 #X connect 6 0 17 0;
@@ -604,10 +604,10 @@
 #X connect 0 0 10 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
-#X connect 4 0 3 0;
 #X connect 5 0 2 0;
 #X connect 6 0 5 0;
 #X connect 6 1 4 0;
+#X connect 6 1 3 2;
 #X connect 6 2 1 0;
 #X connect 6 2 20 1;
 #X connect 8 0 23 0;
@@ -622,7 +622,7 @@
 #X connect 22 1 6 0;
 #X connect 23 0 16 0;
 #X restore 289 430 pd radiobuttonmode_v;
-#N canvas 577 184 432 461 radiobuttonmode_h 0;
+#N canvas 577 184 432 461 radiobuttonmode_h 1;
 #X floatatom 49 251 5 0 0 0 - - -;
 #X obj 136 179 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
@@ -646,10 +646,10 @@
 #X connect 0 0 18 0;
 #X connect 2 0 3 0;
 #X connect 3 0 0 0;
-#X connect 4 0 3 0;
 #X connect 5 0 2 0;
 #X connect 6 0 5 0;
 #X connect 6 1 4 0;
+#X connect 6 1 3 2;
 #X connect 6 2 1 0;
 #X connect 6 2 14 1;
 #X connect 9 0 17 0;
@@ -723,7 +723,7 @@
 #X coords 0 -1 1 1 65 40 2 100 100;
 #X restore 156 172 pd mode;
 #X obj 156 126 routeOSC /pd_mlr/press;
-#X obj 113 167 tgl 16 0 empty empty empty 0 -8 0 10 -262144 -1 -1 1
+#X obj 113 167 tgl 16 0 empty empty empty 0 -8 0 10 -262144 -1 -1 0
 1;
 #X obj 85 304 sel 1;
 #X text 11 231 パラメータの表示;
