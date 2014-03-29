@@ -1,5 +1,5 @@
-#N canvas 566 207 642 402 10;
+#N canvas 641 75 642 458 10;
 #X declare -lib flatgui;
 #X declare -lib mrpeach;
-#X text 248 384 2014 Shingo Sasahara;
-#X obj 3 3 nbb4;
+#X text 221 368 2014 Shingo Sasahara;
+#X obj -45 -69 nbb4;
