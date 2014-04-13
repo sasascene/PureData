@@ -1,5 +1,12 @@
-#N canvas 13 73 1311 476 10;
-#X declare -lib flatgui;
+#N canvas 134 48 1120 627 10;
 #X declare -lib flatgui;
 #X declare -lib mrpeach;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
 #X obj 3 8 noisebeat;

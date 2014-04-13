@@ -1,15 +1,15 @@
-#N canvas 278 25 673 360 10;
+#N canvas 278 25 675 653 10;
 #X declare -lib flatgui;
-#X obj 638 154 vradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
+#X obj 310 440 vradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
 -1 -1 0;
-#X obj 2 156 mixer;
-#X obj 332 155 master;
+#X obj 2 286 mixer;
+#X obj 2 441 master;
 #X obj 167 19 deck 2;
 #X obj 2 19 deck 1;
-#X obj 332 19 deck 3;
-#X obj 497 19 deck 4;
-#X obj 547 326 outlet~;
-#X obj 600 326 outlet~;
+#X obj 2 152 deck 3;
+#X obj 167 152 deck 4;
+#X obj 2 604 outlet~;
+#X obj 295 604 outlet~;
 #X connect 1 0 2 0;
 #X connect 1 1 2 1;
 #X connect 1 2 2 0;
@@ -28,4 +28,4 @@
 #X connect 5 1 1 5;
 #X connect 6 0 1 6;
 #X connect 6 1 1 7;
-#X coords 0 -1 1 1 660 308 1 0 0;
+#X coords 0 -1 1 1 330 600 1 0 0;
