@@ -1,0 +1,17 @@
+#N canvas 70 105 1236 578 10;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X declare -lib mrpeach;
+#X declare -lib flatgui;
+#X declare -lib flatgui;
+#X obj 171 -117 nbb4_sa2;
+#X obj -307 -117 sio;
+#X connect 1 0 0 0;
+#X connect 1 1 0 0;
