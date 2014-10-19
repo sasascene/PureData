@@ -1,11 +1,12 @@
-#N canvas 436 115 403 476 10;
+#N canvas 622 196 403 476 10;
+#X declare -lib mrpeach;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array ar_push 256 float 2;
 #X coords 0 278 1 277 512 20 0;
 #X restore 13 71 graph;
 #X text 12 28 monome;
 #X obj 14 336 vradio 12 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
--1 3;
+-1 0;
 #X text 28 331 push;
 #X text 28 345 toggle;
 #N canvas 0 22 450 278 (subpatch) 0;
@@ -451,7 +452,7 @@
 #X connect 30 0 5 0;
 #X connect 30 1 26 1;
 #X restore 156 113 pd monome_fader1;
-#N canvas 393 104 380 594 monome_fader2 1;
+#N canvas 393 104 380 594 monome_fader2 0;
 #X floatatom 152 127 5 0 0 2 col - -;
 #X floatatom 186 127 5 0 0 2 row - -;
 #X floatatom 221 127 5 0 0 2 val - -;
@@ -885,4 +886,5 @@
 #X connect 46 1 30 1;
 #X restore 156 214 pd monome_seq;
 #X text 28 395 sequence;
+#X obj 155 250 import mrpeach;
 #X connect 17 0 2 0;
