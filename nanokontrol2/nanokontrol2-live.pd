@@ -1,20 +1,20 @@
-#N canvas 219 30 609 291 10;
+#N canvas 355 176 609 291 10;
 #X declare -lib flatgui;
 #X declare -lib mrpeach;
 #X obj 19 52 import flatgui;
 #X obj 204 44 cnv 15 40 130 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 231 100 vsl 8 64 0 127 0 0 empty f0 empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1786 1;
 #X obj 219 68 knob 20 20 0 127 0 0 empty k0 empty 0 -8 0 8 -262144
--1 -1 0 1;
+-1 -1 45 1;
 #X obj 209 99 tgl 15 0 empty s0 S 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 209 124 tgl 15 0 empty m0 M 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 209 149 tgl 15 0 empty r0 R 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 252 44 cnv 15 40 130 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 279 100 vsl 8 64 0 127 0 0 empty f1 empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 992 1;
 #X obj 267 68 knob 20 20 0 127 0 0 empty k1 empty 0 -8 0 8 -262144
 -1 -1 0 1;
 #X obj 257 99 tgl 15 0 empty s1 S 5 9 0 10 -262144 -1 -1 0 127;
@@ -43,7 +43,7 @@
 #X obj 424 101 vsl 8 64 0 127 0 0 empty f4 empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 412 69 knob 20 20 0 127 0 0 empty k4 empty 0 -8 0 8 -262144
--1 -1 0 1;
+-1 -1 898 1;
 #X obj 402 100 tgl 15 0 empty s4 S 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 402 125 tgl 15 0 empty m4 M 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 402 150 tgl 15 0 empty r4 R 5 9 0 10 -262144 -1 -1 0 127;
@@ -52,7 +52,7 @@
 #X obj 472 101 vsl 8 64 0 127 0 0 empty f5 empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 460 69 knob 20 20 0 127 0 0 empty k5 empty 0 -8 0 8 -262144
--1 -1 0 1;
+-1 -1 598 1;
 #X obj 450 100 tgl 15 0 empty s5 S 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 450 125 tgl 15 0 empty m5 M 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 450 150 tgl 15 0 empty r5 R 5 9 0 10 -262144 -1 -1 0 1;
@@ -61,16 +61,16 @@
 #X obj 521 102 vsl 8 64 0 127 0 0 empty f6 empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 509 70 knob 20 20 0 127 0 0 empty k6 empty 0 -8 0 8 -262144
--1 -1 0 1;
+-1 -1 1302 1;
 #X obj 499 101 tgl 15 0 empty s6 S 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 499 126 tgl 15 0 empty m6 M 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 499 151 tgl 15 0 empty r6 R 5 9 0 10 -262144 -1 -1 0 1;
 #X obj 542 46 cnv 15 40 130 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 569 102 vsl 8 64 0 127 0 0 empty f7 empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 198 1;
 #X obj 557 70 knob 20 20 0 127 0 0 empty k7 empty 0 -8 0 8 -262144
--1 -1 0 1;
+-1 -1 449 1;
 #X obj 547 101 tgl 15 0 empty s7 S 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 547 126 tgl 15 0 empty m7 M 5 9 0 10 -262144 -1 -1 0 127;
 #X obj 547 151 tgl 15 0 empty r7 R 5 9 0 10 -262144 -1 -1 0 127;
@@ -557,6 +557,93 @@
 #X text 222 178 solo;
 #X text 528 301 mute;
 #X text 527 425 rec;
+#X text 32 404 button;
+#X obj 32 425 mididev 43;
+#X obj 97 425 mididev 44;
+#X obj 162 425 mididev 42;
+#X obj 227 425 mididev 41;
+#X obj 294 425 mididev 45;
+#X obj 32 450 s b0;
+#X obj 97 450 s b1;
+#X obj 162 450 s b2;
+#X obj 227 450 s b3;
+#X obj 294 450 s b4;
+#N canvas 381 237 745 218 trackselector 0;
+#X floatatom -91 101 5 0 0 0 - - -;
+#X obj -136 73 t b f;
+#X obj -136 124 pack 0 f;
+#X floatatom -7 101 5 0 0 0 - - -;
+#X obj -52 73 t b f;
+#X floatatom 77 101 5 0 0 0 - - -;
+#X obj 32 73 t b f;
+#X floatatom 159 101 5 0 0 0 - - -;
+#X obj 114 73 t b f;
+#X floatatom 243 101 5 0 0 0 - - -;
+#X obj 198 73 t b f;
+#X floatatom 327 101 5 0 0 0 - - -;
+#X obj 282 73 t b f;
+#X floatatom 413 101 5 0 0 0 - - -;
+#X obj 368 73 t b f;
+#X floatatom 497 101 5 0 0 0 - - -;
+#X obj 452 73 t b f;
+#X obj -52 124 pack 1 f;
+#X obj 32 124 pack 2 f;
+#X obj 114 124 pack 3 f;
+#X obj 198 124 pack 4 f;
+#X obj 282 124 pack 5 f;
+#X obj 368 124 pack 6 f;
+#X obj 452 124 pack 7 f;
+#X obj -136 41 inlet;
+#X obj -52 41 inlet;
+#X obj 32 41 inlet;
+#X obj 114 41 inlet;
+#X obj 198 41 inlet;
+#X obj 282 41 inlet;
+#X obj 368 41 inlet;
+#X obj 452 41 inlet;
+#X obj 114 175 outlet;
+#X connect 0 0 2 1;
+#X connect 1 0 2 0;
+#X connect 1 1 0 0;
+#X connect 2 0 32 0;
+#X connect 3 0 17 1;
+#X connect 4 0 17 0;
+#X connect 4 1 3 0;
+#X connect 5 0 18 1;
+#X connect 6 0 18 0;
+#X connect 6 1 5 0;
+#X connect 7 0 19 1;
+#X connect 8 0 19 0;
+#X connect 8 1 7 0;
+#X connect 9 0 20 1;
+#X connect 10 0 20 0;
+#X connect 10 1 9 0;
+#X connect 11 0 21 1;
+#X connect 12 0 21 0;
+#X connect 12 1 11 0;
+#X connect 13 0 22 1;
+#X connect 14 0 22 0;
+#X connect 14 1 13 0;
+#X connect 15 0 23 1;
+#X connect 16 0 23 0;
+#X connect 16 1 15 0;
+#X connect 17 0 32 0;
+#X connect 18 0 32 0;
+#X connect 19 0 32 0;
+#X connect 20 0 32 0;
+#X connect 21 0 32 0;
+#X connect 22 0 32 0;
+#X connect 23 0 32 0;
+#X connect 24 0 1 0;
+#X connect 25 0 4 0;
+#X connect 26 0 6 0;
+#X connect 27 0 8 0;
+#X connect 28 0 10 0;
+#X connect 29 0 12 0;
+#X connect 30 0 14 0;
+#X connect 31 0 16 0;
+#X restore 70 490 pd trackselector;
+#X msg 70 516 send /button \$1 \$2;
 #X connect 0 0 24 0;
 #X connect 0 0 81 0;
 #X connect 1 0 25 0;
@@ -647,6 +734,18 @@
 #X connect 87 0 90 0;
 #X connect 88 0 89 0;
 #X connect 89 0 90 0;
+#X connect 97 0 102 0;
+#X connect 97 0 107 0;
+#X connect 98 0 103 0;
+#X connect 98 0 107 1;
+#X connect 99 0 104 0;
+#X connect 99 0 107 2;
+#X connect 100 0 105 0;
+#X connect 100 0 107 3;
+#X connect 101 0 106 0;
+#X connect 101 0 107 4;
+#X connect 107 0 108 0;
+#X connect 108 0 90 0;
 #X restore 59 178 pd fromdevice;
 #X obj 73 230 spigot;
 #X obj 106 208 tgl 15 0 empty empty debug 17 7 0 10 -262144 -1 -1 0
@@ -654,6 +753,11 @@
 #X text 112 24 OSC;
 #X text 112 51 GUI;
 #X text 202 19 KORG nanoKONTROL2;
+#X obj 205 184 tgl 15 0 empty b0 0 5 9 0 10 -262144 -1 -1 0 127;
+#X obj 224 184 tgl 15 0 empty b1 1 5 9 0 10 -262144 -1 -1 0 127;
+#X obj 245 184 tgl 15 0 empty b2 2 5 9 0 10 -262144 -1 -1 0 127;
+#X obj 264 184 tgl 15 0 empty b3 3 5 9 0 10 -262144 -1 -1 0 127;
+#X obj 285 184 tgl 15 0 empty b4 4 5 9 0 10 -262144 -1 -1 0 127;
 #X connect 59 0 60 0;
 #X connect 61 0 62 0;
 #X connect 62 0 60 0;
